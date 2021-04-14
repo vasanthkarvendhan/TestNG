@@ -1,0 +1,26 @@
+package objectrepository;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+
+public class Homepage {
+
+  WebDriver driver;
+  public  Homepage(WebDriver driver)
+  {
+	  this.driver=driver;
+  }
+  By search=By.id("srchquery_tbox");
+  By submit=By.xpath("/html/body/div[5]/div[1]/form/input[2]");
+  
+  public WebElement search()
+  {
+	  return driver.findElement(search);
+	 }
+  public WebElement submit()
+  {
+	  return driver.findElement(submit);
+	 }
+}
