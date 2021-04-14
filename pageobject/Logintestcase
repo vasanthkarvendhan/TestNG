@@ -1,0 +1,31 @@
+package testcase;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import objectrepository.Homepage;
+import objectrepository.Loginpage;
+
+public class Logintestcase {
+	
+	@Test
+	public void Login()
+	{
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\User\\eclipse-workspace\\SELENIUM11\\src\\drivers\\chromedriver.exe");
+	    WebDriver driver=new ChromeDriver();
+		driver.get("https://mail.rediff.com/cgi-bin/login.cgi");	
+		Loginpage rd=new Loginpage(driver);
+		rd.Emailid().sendKeys("hello");
+		rd.password().sendKeys("1234");
+		//rd.submit().click();
+		rd.home().click();
+		Homepage rr=new Homepage(driver);
+		rr.search().sendKeys("rediff");
+		rr.submit().click();		
+		
+		
+		
+}
+
+}
